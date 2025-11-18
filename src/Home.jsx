@@ -9,7 +9,7 @@ export default function Home(){
     "July", "August", "September", "October", "November", "December"
     ];
     const shortDays = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let {data,loading,error} = useFetch("https://meetupappbackend-git-main-rahuls-projects-0dd917de.vercel.app/meetups")
+    let {data,loading,error} = useFetch("https://meetupappbackend.vercel.app/meetups")
     console.log(data)
     let filteredMeetups = []
     if(data)

@@ -3,7 +3,7 @@ import useFetch from "./useFetch"
 export default function Details(){
     const {id} = useParams()
    
-    const {data,loading,error} = useFetch(`https://meetupappbackend-git-main-rahuls-projects-0dd917de.vercel.app/meetups/${id}`)
+    const {data,loading,error} = useFetch(`https://meetupappbackend.vercel.app/meetups/${id}`)
     console.log(data)
     const months = [
     "Jan", "Feb", "March", "April", "May", "June",
