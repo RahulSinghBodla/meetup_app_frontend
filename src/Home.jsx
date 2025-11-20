@@ -36,10 +36,13 @@ export default function Home(){
             <>
             <div className="bg-light">
             <div className="container">
-        <div className="d-flex justify-content-between">
-        <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" className="img-fluid"/></a>
-        <input  className="img-fluid" type="text" placeholder="Search by title and tag" value={searchValue} onChange={(event)=>setSearchValue(event.target.value)}/>
-        </div>
+                <div className="d-flex justify-content-between">
+                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="50px" className="pt-4"/></a>
+                    <div className="pt-4">
+                        <input type="text" value={searchValue} onChange={(event)=> setSearchValue(event.target.value)} placeholder="Search by title and tags" />
+                    </div>
+                    
+                </div>
         <hr />
         <div className="d-flex justify-content-between">
         <h2>Meetup Events</h2>

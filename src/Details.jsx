@@ -21,12 +21,15 @@ export default function Details(){
             <div className="bg-light">
             <div className="container">
                 <div className="d-flex justify-content-between">
-                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="50px" /></a>
-                    <input type="text" placeholder="Search by title and tags" />
+                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="50px" className="pt-4"/></a>
+                    <div className="pt-4">
+                        <input type="text" placeholder="Search by title and tags" />
+                    </div>
+                    
                 </div>
                 <hr />
                 <div className="d-flex justify-content-between py-4">
-                    <div className="d-flex flex-column col-md-6">
+                    <div className="d-flex flex-column col-md-6 py-4">
                         <p className="fs-1 fw-semibold">{data.ourmeet.title}</p>
                         <p>Hosted By:</p>
                         <h5 className="fw-bold">{data.ourmeet.host}</h5><br /><br />
