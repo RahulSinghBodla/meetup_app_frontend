@@ -14,14 +14,14 @@ export default function Details(){
     
     return(
         <>
-        {loading && <p>Loading....</p>}
+        {loading && <p className="m-5">Loading....</p>}
         {error && <p>Error while laoding data.</p>}
         {data && (
             <>
             <div className="bg-light">
             <div className="container">
                 <div className="d-flex justify-content-between">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="50px" />
+                    <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="50px" /></a>
                     <input type="text" placeholder="Search by title and tags" />
                 </div>
                 <hr />

@@ -17,20 +17,28 @@ export default function Home(){
         if(eventType==="Both" && searchValue==="")
         filteredMeetups = data.meetups
         else
-        filteredMeetups = data.meetups.filter(meet => (meet.eventtype === eventType) || (meet.title === searchValue))
+        filteredMeetups = data.meetups.filter(meet => {
+        let query = searchValue.toLowerCase()
+        let currTitle = meet.title.toLowerCase()
+        let currTagArray = meet.eventtags
+        if(query==="")
+            return meet.eventtype === eventType
+        else
+            return currTitle.includes(query) || currTagArray.includes(query)
+    })
     }
     
     return(
         <>
-        {loading && <p>Loading...</p>}
+        {loading && <p className="m-5">Loading...</p>}
         {error && <p>Error while fetching data.</p>}
         {data && (
             <>
             <div className="bg-light">
             <div className="container">
         <div className="d-flex justify-content-between">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" height="100px"/>
-        <input className="text-align-right" type="text" placeholder="Search by title and tag" value={searchValue} onChange={(event)=>setSearchValue(event.target.value)}/>
+        <a href="/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaAnUgoSo-AEaMQPb5b40ViSP_hcJUSu3sAw&s" alt="" className="img-fluid"/></a>
+        <input  className="img-fluid" type="text" placeholder="Search by title and tag" value={searchValue} onChange={(event)=>setSearchValue(event.target.value)}/>
         </div>
         <hr />
         <div className="d-flex justify-content-between">
@@ -45,11 +53,11 @@ export default function Home(){
                 {filteredMeetups.map((ele)=> (
                 <>
                 
-                <div className="col-md-4" key={ele._id}>
+                <div className="col-md-4 col-12 col-sm-6" key={ele._id}>
                 <Link to={`/details/${ele._id}`} >
                 <div className="card">
                     
-                    <img src={ele.photoUrl} height="220px" alt="" className="rounded"/>
+                    <img src={ele.photoUrl} className="img-fluid rounded" alt="" />
                     
                 </div>
                 <p className="card-text secondary">{shortDays[new Date(ele.startTime).getDay()]} {months[new Date(ele.startTime).getMonth()]} {new Date(ele.startTime).getDate()} {new Date(ele.startTime).getFullYear()} {new Date(ele.startTime).getHours()}:{new Date(ele.startTime).getMinutes()}:{new Date(ele.startTime).getSeconds()} {new Date(ele.startTime).getHours()<12 ? "AM" : "PM"} IST</p>
