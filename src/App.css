@@ -1,4 +1,4 @@
-#root {
+/*#root {
   max-width: 1280px;
   margin: 0 ;
   padding: 2rem;
@@ -42,10 +42,26 @@
 }
 .custom-tag {
   background-color: #f8d7da; /* light red */
-  color: #b02a37;           /* dark red text */
-  padding: 4px 12px;
+  /*color: #b02a37;           /* dark red text */
+  /*padding: 4px 12px;
   border-radius: 20px;      /* pill shape */
-  font-size: 0.85rem;
+  /*font-size: 0.85rem;
   font-weight: 500;
   display: inline-block;
 }
+
+ /* Styles for screens wider than 768px */
+  @media (min-width: 768px) {
+    .container {
+      width: 80%;
+    }
+  }
+
+  /* Styles for screens narrower than 768px */
+  @media (max-width: 767px) {
+    .container {
+      width: 100%;
+    }
+  }
+
+  
